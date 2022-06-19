@@ -6,7 +6,11 @@ The `latest` image uses [distroless](https://github.com/GoogleContainerTools/dis
 
 The `nvidia` image uses [nvidia's OpenCL base image](https://hub.docker.com/r/nvidia/opencl/), the final image weights ~90Mb. It provides support for both CPU and GPU with [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) which should be installed on the host system.
 
+The docker-compose has an nginx container that adds cors headers so that Biome can use the server.
+
 ## Usage
+
+    docker-compose up -d
 
     docker run --rm -p 127.0.0.1:7000:7000/tcp pbuyle/nano-work-server --cpu-threads 4 --listen-address 0.0.0.0:7000
 
